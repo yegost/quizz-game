@@ -9,6 +9,7 @@ const progressBar = document.getElementById('progress-bar');
 const resultsScreen = document.getElementById('results-screen');
 const finalScore = document.getElementById('final-score');
 const resultMessage = document.getElementById('result-message');
+const restartBtn = document.getElementById('restart-btn');
 
 const questions = [
   {
@@ -95,5 +96,14 @@ function showResults() {
     }
 }
 
+function restartQuiz() {
+    score = 0;
+    current = 0;
+    resultsScreen.classList.add('hidden');
+    startScreen.classList.remove('hidden');
+    scoreNum.textContent = 0;
+}
+
 startBtn.addEventListener('click', startQuiz);
 optionsDiv.addEventListener('click', handleAnswer);
+restartBtn.addEventListener('click', restartQuiz);

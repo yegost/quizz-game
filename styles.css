@@ -203,3 +203,60 @@ body {
     font-family: var(--secondary-font);
     font-weight: 700;
 }
+
+    /* Results screen */
+#results-screen {
+    text-align: center;
+}
+
+#results-screen .big-score {
+    font-family: var(--secondary-font);
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    line-height: 1;
+    margin: 1.5rem 0 0.5rem;
+}
+
+#results-screen .result-label {
+    font-family: var(--secondary-font);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted-color);
+    margin-bottom: 0.5rem;
+}
+
+#results-screen .result-message {
+    font-size: 1.1rem;
+    color: var(--muted-color);
+    margin-bottom: 2.5rem;
+}
+
+#results-screen .result-message strong {
+    color: var(--text-color);
+}
+
+#restart-btn {
+    background: var(--accent-color);
+    border: none;
+    border-radius: 12px;
+    color: #0d0d0f;
+    cursor: pointer;
+    font-family: var(--secondary-font);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 1rem 2.5rem;
+    transition: background 0.2s, transform 0.15s;
+}
+
+#restart-btn:hover {
+    background-color: var(--accent-dim-color);
+    transform: scale(1.03);
+}
+
+#restart-btn:active {
+    background-color: var(--accent-dim-color);
+    transform: scale(0.97);
+}
