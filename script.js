@@ -50,12 +50,13 @@ function startQuiz() {
 
 function showQuestion() {
     const { question, options } = questions[current];
+    const shuffledOptions = [...options].sort(() => Math.random() - 0.5);
 
     progressText.textContent = `${current + 1} / ${questions.length}`;
     progressBar.style.width = `${((current + 1) / questions.length) * 100}%`;
 
     questionText.textContent = question;
-    optionsDiv.innerHTML =  options.map((option) => `
+    optionsDiv.innerHTML =  shuffledOptions.map((option) => `
         <button class='option-btn'>${option}</button>
     `).join('');
 }
@@ -78,7 +79,7 @@ function handleAnswer(a) {
         } else {
             showResults();
         }
-    }, 1)
+    }, 1000)
 }
 
 function showResults() {
@@ -87,12 +88,12 @@ function showResults() {
 
     finalScore.textContent = score;
     switch((score)) {
-        case 0: resultMessage.textContent = 'bad'; break;
-        case 1: resultMessage.textContent = 'ugh'; break;
-        case 2: resultMessage.textContent = 'meh'; break;
-        case 3: resultMessage.textContent = 'decent'; break;
-        case 4: resultMessage.textContent = 'good'; break;
-        case 5: resultMessage.textContent = 'very good'; break;
+        case 0: resultMessage.textContent = "Did you even try? 💀"; break;
+        case 1: resultMessage.textContent = "Rough one. Google exists, you know. 😬"; break;
+        case 2: resultMessage.textContent = "You knew something at least... barely. 😅"; break;
+        case 3: resultMessage.textContent = "Not bad, not great. Room to grow! 🙃"; break;
+        case 4: resultMessage.textContent = "So close to perfect. Almost there! 🔥"; break;
+        case 5: resultMessage.textContent = "Flawless. Are you even human? 🧠"; break;
     }
 }
 
